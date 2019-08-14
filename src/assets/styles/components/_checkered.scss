@@ -1,0 +1,13 @@
+$background-color-1: #f0f0f0;
+$background-color-2: #ffffff;
+$size: 10px;
+
+@mixin checkeredBackground() {
+  background-color: $background-color-2;
+  background-image: linear-gradient(45deg, $background-color-1 25%, transparent 25%),
+  linear-gradient(-45deg, $background-color-1 25%, transparent 25%),
+  linear-gradient(45deg, transparent 75%, $background-color-1 75%),
+  linear-gradient(-45deg, transparent 75%, $background-color-1 75%);
+  background-size: (2 * $size) (2 * $size);
+  background-position: 0 0, 0 $size, $size (-$size), (-$size) 0px;
+}

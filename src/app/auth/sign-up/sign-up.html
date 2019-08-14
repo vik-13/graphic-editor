@@ -1,0 +1,25 @@
+<form #form="ngForm" (submit)="submit(form)" autocomplete="off" novalidate>
+  <mat-card>
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <div class="form-elements-container">
+        <mat-form-field>
+          <input matInput ngModel name="email" type="email" placeholder="Email" email required #emailField="ngModel">
+          <mat-hint align="start">For the test reason you can enter any email.</mat-hint>
+          <mat-error *ngIf="emailField.errors?.required">This field is required</mat-error>
+          <mat-error *ngIf="emailField.errors?.email">Incorrect email address</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput ngModel name="password" type="password" placeholder="Password" required minlength="6" #passwordField="ngModel">
+          <mat-error *ngIf="passwordField.errors?.required">This field is required</mat-error>
+          <mat-error *ngIf="passwordField.errors?.minlength">Cannot be less than {{passwordField.errors.minlength.requiredLength}}</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <a mat-button routerLink="/sign-in">I have an account!</a>
+      <span class="flex"></span>
+      <button type="submit" mat-raised-button color="primary">Create</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

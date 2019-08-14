@@ -1,0 +1,23 @@
+<form #form="ngForm" (submit)="submit(form)" autocomplete="off" novalidate>
+<mat-card>
+  <mat-card-title>Graphic EDITOR</mat-card-title>
+  <mat-card-content>
+    <div class="form-elements-container">
+      <mat-form-field>
+        <input matInput ngModel name="email" type="email" placeholder="Email" email required #emailField="ngModel">
+        <mat-error *ngIf="emailField.errors?.required">This field is required</mat-error>
+        <mat-error *ngIf="emailField.errors?.email">Incorrect email address</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput ngModel name="password" type="password" placeholder="Password" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <a mat-button routerLink="/sign-up">I don't have an account!</a>
+    <span class="flex"></span>
+    <button type="submit" mat-raised-button color="primary">Sign in</button>
+  </mat-card-actions>
+</mat-card>
+</form>

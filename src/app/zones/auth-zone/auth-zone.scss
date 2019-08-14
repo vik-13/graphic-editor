@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+.auth-zone-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: mat-color(mat-palette($mat-indigo));
+}

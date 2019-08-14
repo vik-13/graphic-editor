@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+@import "~src/assets/styles/variables";
+
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: $shadow-basic;
+
+  .card-title {
+    font-size: $font-size-xs;
+    color: $white;
+    padding: 2px 8px;
+    background-color: mat-color(mat-palette($mat-indigo));
+    cursor: default;
+    user-select: none;
+  }
+
+  .card-content {
+    padding: 0 8px;
+  }
+}

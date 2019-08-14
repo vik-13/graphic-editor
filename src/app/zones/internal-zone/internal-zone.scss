@@ -1,0 +1,9 @@
+.internal-container {
+  position: relative;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.flex {
+  flex: 1;
+}
